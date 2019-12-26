@@ -41,7 +41,7 @@ function submit() {
         return;
     }
 
-    let time = 1;
+    let time = get_time();
     let round = calculate_round(time);
     if (typeof $("#week2:checked").val() === "string")
         round += 105;
