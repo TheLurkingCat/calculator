@@ -4,17 +4,28 @@
 <head>
     <meta charset="utf-8">
     <title>Calculator</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="jquery.js"></script>
     <script src="script.js"></script>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
 </head>
 
 <body>
     <div style="float: left;padding: 10px 10px;">
-        <input type="text" id="score"> 目前分數<br><br>
-        <input type="text" id="left"> 剩餘場次<br><br>
-        <input type="radio" name="week" checked>第一週
-        <input type="radio" name="week" id="week2">第二週<br><br>
-        <button id="submit" onclick=submit()>確認</button><br><br>
+        <form id="form">
+            <input type="number" min="0" max="10000" step="1" id="score" value=0> 目前分數<br><br>
+            <input type="number" min="0" max="10" step="1" id="left" value=10> 剩餘場次<br><br>
+            <input type="submit" value="確認"><br><br>
+        </form>
         <p type="text"></p>
     </div>
     <a title="Source code" href="https://github.com/TheLurkingCat/meow.github.io"><img src="Octocat.png"></a>
